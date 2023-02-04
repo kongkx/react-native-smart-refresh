@@ -5,7 +5,7 @@ import LottieView from 'lottie-react-native';
 import {SmartRefresh,SmartRefreshHeader} from "../index";
 
 function RefreshAnimateHeader(props) {
-  const { refreshing, onRefresh = () => {}, source='', containerStyle, lottieStyle, lottieOptions } = props;
+  const { refreshing, onRefresh = () => {}, source='', containerStyle, lottieStyle, lottieOptions, fullDistance = 300 } = props;
 
   const lottieRef = useRef(React.createRef());
   let offsetValue = new Animated.Value(0);
@@ -63,7 +63,7 @@ function RefreshAnimateHeader(props) {
           hardwareAccelerationAndroid={true}
           cacheStrategy={'strong'}
           progress={offsetValue.interpolate({
-            inputRange:[0,300],
+            inputRange:[0,fullDistance],
             outputRange:[0,1],
           })}
           {...lottieOptions}
