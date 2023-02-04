@@ -5,7 +5,7 @@
 //  Created by apple on 2020/12/27.
 //
 
-#import "RCTView.h"
+#import <React/RCTView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
